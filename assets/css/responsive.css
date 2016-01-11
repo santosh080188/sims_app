@@ -1,0 +1,159 @@
+@media (min-width: 320px) and (max-width: 768px) {
+	
+}
+
+@media (max-width:1920px) {
+	
+}
+
+@media (max-width:1280px) {
+	
+}
+
+/* Landscape */
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (orientation: landscape) 
+  and (-webkit-min-device-pixel-ratio: 2) {
+	
+}
+
+@media (max-width:1024px) {
+	
+}
+
+@media (max-width:980px) {
+
+}
+
+@media (max-width:900px) {
+
+}
+
+@media (max-width:800px) {
+
+}
+
+@media (max-width:768px) {
+	.container{width:92%;}
+}
+
+/*Only for iPhone6+*/
+@media (max-width: 736px) {
+
+}
+
+/*Only for iPhone6*/
+@media (max-width: 667px) {
+
+}
+
+@media (max-width: 640px) {
+	.nav-top{width: 325px;}
+	.nav-top ul li{margin:0 0 0 5px; padding:0 0 0 5px;}
+	.nav-top ul li a{font-size:14px;}
+}
+
+@media (max-width: 600px) {
+	.nav-top{width: 305px;}
+	.nav-top ul li{margin:0 0 0 5px; padding:0 0 0 5px;}
+	.nav-top ul li a{font-size:13px;}
+}
+	
+@media (max-width: 568px) {
+	.container{width:80%;}
+	
+	/*Popup*/
+	.form-left, .form-right{width:100%; margin:0;}
+}
+
+@media (max-width: 480px) {
+	.header{padding:10px 5px;}
+	.header .logo{width:100%;}
+	.header .logo img{width:200px;}
+	.container{width:87%;}
+	.nav-top{width:100%;}
+	.nav-top ul li{margin:0 0 0 15px; padding:0 0 0 15px;}
+	.nav-top ul li a{font-size:14px;}
+	
+	/*Popup*/
+	.form-left, .form-right{width:100%; margin:0;}
+}
+
+/*Only for iPhone6+*/
+@media (max-width: 414px) {
+	.container{width:80%;}
+	
+	/*Popup*/
+	.form-left, .form-right{width:100%; margin:0;}
+}
+
+/*Only for iPhone6*/
+@media (max-width: 375px) {
+	.container{width:80%;}
+	
+	/*Popup*/
+	.form-left, .form-right{width:100%; margin:0;}
+}
+
+@media (max-width: 360px) {
+	.blue-box{width:340px;}
+	.blue-box .footer{font-size:12px;}
+	.nav-top ul li{margin:0 0 0 5px; padding:0 0 0 5px;}
+	.nav-top ul li a{font-size:14px;}
+	.container{width:80%;}
+	
+	/*Popup*/
+	.form-left, .form-right{width:100%; margin:0;}
+}
+
+@media (max-width: 320px) {
+	.blue-box{width:300px;}
+	.blue-box .footer{font-size:11px;}
+	.header{padding:10px 5px;}
+	.header .logo{width:100%;}
+	.header .logo img{width:200px;}
+	.nav-top{width:100%;}
+	.nav-top ul li{margin:0 0 0 5px; padding:0 0 0 5px;}
+	.nav-top ul li a{font-size:12px;}
+	.container{width:80%;}
+	
+	/*Popup*/
+	.form-left, .form-right{width:100%; margin:0;}
+}
+
+/* ----------- Apple Watch ----------- */
+@media (max-device-width: 42mm) and (min-device-width: 38mm) { 
+	
+}
+
+@media (max-width: 281px) {
+	.blue-box .logo{width:100%;}
+	.blue-box{width:250px;}
+	.blue-box .footer{font-size:11px;}
+	.header{padding:10px 5px;}
+	.header .logo{width:100%;}
+	.header .logo img{width:100px;}
+	.nav-top{width:100%;}
+	.nav-top ul li{margin:0 0 0 5px; padding:0 0 0 5px;}
+	.nav-top ul li a{font-size:12px;}
+	.container{width:80%;}
+}
+
+/* ----------- Moto 360 Watch ----------- */
+@media (max-width: 218px) {
+	.blue-box .logo{width:100%;}
+	.blue-box{width:200px;}
+	.blue-box h1{font-size:24px;}
+	.blue-box .footer{font-size:11px;}
+	.header{padding:10px 5px;}
+	.header .logo{width:100%;}
+	.header .logo img{width:100px;}
+	.nav-top{width:100%;}
+	.nav-top ul li{margin:0 0 0 5px; padding:0 0 0 5px;}
+	.nav-top ul li a{font-size:12px;}
+	.container{width:80%;}
+
+	input[type="button"], input[type="submit"], button[type="submit"], button[type="reset"], .btn-default, .btn-primary{padding:5px 8px;}
+}

@@ -1,0 +1,91 @@
+body{background-color:#e8f0fa; font-size:18px; font-weight:normal; line-height:1.3em; margin:0; padding:0;}
+body, a, input, p, h1, h2, h3, h4, h5, h6, form, .kwikkar-menu li a, .cssmenu, #top-box .logout .textwidget ul li a, #top-box .logout .textwidget ul li a:hover {
+    font-family:'Open Sans', sans-serif;
+}
+h1, h2, h3, h4, h5, h6{margin:0 0 20px 0; color:#15a4fa;}
+h1{font-size:30px;}
+a, a:hover, a:active, a:visited{text-decoration:none; border:solid 0px #fff; outline:solid 0px #fff;}
+a{color:#162b53;}
+a:hover{color:#fff;}
+.ali-rit{text-align:right;}
+.ali-left{text-align:left;}
+.flt-right{float:right;}
+.flt-left{float:left;}
+ul, li{list-style:none;}
+.no-bdr{border:solid 0px #ccc !important;}
+.bdr-top{border-top:solid 1px #fff;}
+.no-marg{margin:0 !important;}
+
+/*Login*/
+.blue-box {width:380px; height:auto; margin:50px auto 0 auto; padding:0 0 0 0; float:none;}
+.blue-box h1{font-size:35px; margin:0 0 20px 0; padding:0; color:#fff;}
+.blue-box a{font-size:15px;}
+.blue-box .logo{width:253px; height:auto; margin:0 auto 20px auto; padding:0 0 0 0; float:none; text-align:center;}
+.blue-box .logo a{width:100%;}
+.blue-box .logo a img{width:100%; height:auto;}
+.blue-box .login-box{width:100%; height:auto; margin:0; padding:20px 30px; float:left; background-color:#4db1e2; color:#fff; border:solid 1px #4db1e2; -webkit-border-radius:3px; -moz-border-radius:3px; border-radius:3px;}
+.blue-box  .footer{width:100%; height:auto; margin:0 0 0 0; padding:20px 0 30px 0; float:left; font-size:14px; color:#a3a3a3; text-align:center; background:url(../images/box-shadow.png) no-repeat top center;}
+.form-login{width:100%; margin:0; padding:0; float:left; list-style:none;}
+.form-login li{width:100%; margin:0 0 20px 0; float:left;}
+.dym-txt{width:100%; height:auto; margin:0 0 5px 0; padding:0; float:left; color:red; font-size:12px;}
+.defl-txt{width:100%; height:auto; margin:0 0 5px 0; padding:0; float:left; font-size:12px;}
+
+/*Form*/
+input[type="text"], input[type="password"], input[type="email"], input[type="phone"], select, textarea{-webkit-border-radius:2px; -moz-border-radius:2px; border-radius:2px; border:solid 0px #fff; background-color:#fff; color:#a3a3a3; padding:10px; margin:0 0 5px 0; width:100%; height:auto; font-weight:normal;}
+
+input[type="button"], input[type="submit"], button[type="submit"], button[type="reset"], .btn-default, .btn-primary{-webkit-border-radius:2px; -moz-border-radius:2px; border-radius:2px; border:solid 0px #fff; background-color:#162b53; color:#fff; padding:10px 20px; margin:0 0 0 7px; width:auto; float:right; background-image:none; text-shadow:0 0px 0 #fff;}
+input[type="button"]:hover, input[type="submit"]:hover, button[type="submit"]:hover, button[type="reset"]:hover, .btn-default:hover, .btn-primary:hover{background-color:#265a88; color:#fff;}
+.flt-left button{margin:5px 10px 10px 0; padding:5px 8px; float:left;}
+
+/*Validation*/
+.help-block{font-size:12px; color:#ff0202; margin:0 0 0 0;}
+.has-error .help-block, .has-error .control-label, .has-error .radio, .has-error .checkbox, .has-error .radio-inline, .has-error .checkbox-inline{color:#ff0202;}
+
+/*Dashboard*/
+.main{width:100%; height:auto; margin:0 0 0 0; padding:0 0 0 0; float:left;}
+.header {width:100%; height:auto; margin:0 0 30px 0; padding:10px 30px; float:left; background-color:#fff; color:#687ea1; -webkit-box-shadow: 0px 8px 8px 0px rgba(199,199,199,1);
+-moz-box-shadow: 0px 8px 8px 0px rgba(199,199,199,1); box-shadow: 0px 8px 8px 0px rgba(199,199,199,1);}
+.container {width:96%; height:auto; margin:0 30px; padding:0; float:left;}
+.container h1 span{font-size:25px; color:#3e65b0;}
+.content{width:100%; height:auto; margin:0; padding:0; float:left;}
+
+/*Header*/
+.header .logo{width:220px; height:auto; float:left; text-align:center;}
+.header .logo img{width:100%; height:auto; float:none;}
+.nav-top{width:445px; height:auto; margin:17px 0 0 0; padding:0 0 0 0; float:right; color:#687ea1;}
+.nav-top ul{width:100%; height:auto; margin:0; padding:0 0 0 0; float:right;}
+.nav-top ul li{width:auto; height:auto; margin:0 0 0 15px; padding:0 0 0 15px; float:left; border-left:dotted 1px #687ea1;}
+.nav-top ul li a:hover{color:#162b53;}
+.nav-top ul li a i{width:22px; height:22px; margin:0 0 0 5px; padding:0; float:right; background-image:url(../images/icons-nav-top.png);}
+.Username{background-position:0 0px;}
+.Logout{background-position:0 -28px;}
+.Get-Quotation{background-position:0 -58px;}
+
+/*Container*/
+.table-responsive table{font-size:14px; border-left:solid 1px #fff;}
+.table-responsive table thead tr th{font-weight:bold; background-color:#9ba5b5; padding:5px; border-right:solid 1px #fff; border-bottom:solid 1px #fff;}
+.table-responsive table tbody tr td{font-weight:normal; background-color:#d7e3f6; padding:5px; border-right:solid 1px #fff; border-bottom:solid 1px #fff;}
+.table-responsive table tbody tr td:nth-child(1), .table-responsive table tbody tr td:nth-child(2), .table-responsive table tbody tr td:nth-child(7), .table-responsive table tbody tr td:nth-child(8), .table-responsive table tbody tr td:nth-child(10), .table-responsive table tbody tr td:nth-child(12), .table-responsive table tbody tr td:nth-child(13){text-align:right;}
+.table-responsive table tbody tr td:nth-child(12) span, .table-responsive table tbody tr td:nth-child(13) span{float:left; text-align:right;}
+.pagination{float:right;}
+.pagination ul{width:100%;}
+.pagination li{float:left;}
+.pagination a{color:#535151; background-color:#d7e3f6;}
+.pagination a:hover, .pagination a.active{color:#535151; background-color:#bdc4d0;}
+.pagination a, .pagination a:hover, .pagination a.active{font-size:12px; margin:0 0 0 1px; padding:2px 8px; text-decoration:none;}
+
+/*Modal*/
+.modal-content{background-color:#4db1e2; color:#fff; float:left;}
+.modal-body, .modal-footer{width:100%; float:left;}
+.modal-title{color:#fff; font-size:30px;}
+button.close{color:#fff; opacity:1; text-shadow:0 0px 0 #fff;}
+.form-left, .form-right{width:48%; font-size:15px; font-weight:bold;}
+.form-left{height:auto; margin:0 20px 0 0; padding:0; float:left;}
+.form-right{height:auto; margin:0; padding:0; float:left;}
+.modal-body ul{margin:5px 0 0 0; padding:0;}
+.modal-body li{width:100%; margin:0 0 5px 0; padding:0;}
+.modal-body input[type="text"], .modal-body select{padding:5px 10px; font-size:14px;}
+.modal-body select:disabled {color:#ccc; opacity:0.8; cursor:no-drop;}
+.modal-body .dyn-data label{width:100%; margin:0 0 5px 0; float:left; font-weight:normal; font-size:12px;}
+.modal-body .dyn-data label span{width:69px; margin:0 0 0 5px; float:right; text-align:left;}
+
