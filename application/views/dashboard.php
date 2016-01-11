@@ -61,15 +61,20 @@
 					</thead>
 					
 					<tbody>
+                                            <?php
+                                                $loop = 0;
+                                                foreach ($user_product_list as $obj) { 
+                                                   // print_r($obj);exit();
+                                                ?>
 						<tr>
-							<td>1</td>
-							<td>100000065</td>
-							<td>12/17/2015</td>
-							<td>GE-QFlex-15</td>
-							<td>Genband</td>
-							<td>QFlex</td>
-							<td>2,000</td>
-							<td>15</td>
+							<td><?php echo ++$loop?></td>
+							<td><?php echo $loop."aq"?></td>
+							<td><?php echo date('Y-m-d');?></td>
+							<td><?php echo $obj->sku?></td>
+							<td><?php echo $obj->manufacturer?></td>
+							<td><?php echo $obj->model_number?></td>
+							<td><?php echo $obj->concurrent_SIP_sessions?></td>
+							<td><?php echo $obj->package_concurrent_SIP?></td>
 							<td>Foundation</td>
 							<td>12</td>
 							<td>Remote</td>
@@ -77,81 +82,12 @@
 							<td><span>$</span> 10,000</td>
 							<td><a href="#"><img src="<?php echo base_url(); ?>assets/images/icon-pdf.png" width="21" height="19" alt=""></a></td>
 						</tr>
-						<tr>
-							<td>2</td>
-							<td>100000053</td>
-							<td>12/16/2015</td>
-							<td>OR-VME-25</td>
-							<td>Oracle</td>
-							<td>VME</td>
-							<td>1,000</td>
-							<td>25</td>
-							<td>Basic</td>
-							<td>24</td>
-							<td>Remote</td>
-							<td><span>$</span> 2,570</td>
-							<td><span>$</span> 10,000</td>
-							<td><a href="#"><img src="<?php echo base_url(); ?>assets/images/icon-pdf.png" width="21" height="19" alt=""></a></td>
-						</tr>
-						<tr>
-							<td>3</td>
-							<td>100000041</td>
-							<td>12/15/2015</td>
-							<td>SO-SBCSWE-500</td>
-							<td>Sonus</td>
-							<td>SWE</td>
-							<td>20,250</td>
-							<td>500</td>
-							<td>Equipment and Install</td>
-							<td>36</td>
-							<td>Onsite</td>
-							<td><span>$</span> 2,570</td>
-							<td><span>$</span> 17,000</td>
-							<td><a href="#"><img src="<?php echo base_url(); ?>assets/images/icon-pdf.png" width="21" height="19" alt=""></a></td>
-						</tr>
-						<tr>
-							<td>4</td>
-							<td>100000026</td>
-							<td>12/15/2015</td>
-							<td>OR-VME-25HA</td>
-							<td>Oracle</td>
-							<td>VME</td>
-							<td>1,000</td>
-							<td>25</td>
-							<td>Basic</td>
-							<td>48</td>
-							<td>Remote</td>
-							<td><span>$</span> 630</td>
-							<td><span>$</span> 5,500</td>
-							<td><a href="#"><img src="<?php echo base_url(); ?>assets/images/icon-pdf.png" width="21" height="19" alt=""></a></td>
-						</tr>
-						<tr>
-							<td>5</td>
-							<td>100000007</td>
-							<td>12/14/2015</td>
-							<td>OR-AP6300-30,000</td>
-							<td>Oracle</td>
-							<td>AP 6300</td>
-							<td>80,000</td>
-							<td>50000</td>
-							<td>Foundation</td>
-							<td>60</td>
-							<td>Onsite</td>
-							<td><span>$</span> 45,970</td>
-							<td><span>$</span> 20,000</td>
-							<td><a href="#"><img src="<?php echo base_url(); ?>assets/images/icon-pdf.png" width="21" height="19" alt=""></a></td>
-						</tr>
+                                            <?php } ?>						
 					</thead>
 				</table>
             </div><!--Responsive DataTable End-->
 			<div class="pagination">
-				<ul>
-					<li><a href="#" class="active">1</a><li>
-					<li><a href="#" class="">2</a><li>
-					<li><a href="#" class="">3</a><li>
-					<li><a href="#" class="">4</a><li>
-					<li><a href="#" class="">5</a><li>
-				</ul>
+				<?php echo $links?>
 			</div>
 			
 		</div><!--Content End-->
