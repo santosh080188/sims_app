@@ -41,12 +41,13 @@ class Registration extends CI_Controller {
         $confpassword = $_POST['conpassword'];
 
         if ($email != "" && $firstname != "" && $lastname != "" && $password != "" && $confpassword != "") {
-            $result = $this->db->query("SELECT sum(CASE WHEN `email` = '$email' THEN 1 END ) AS temail FROM users");
-            $data = $result->result();
-            //$resultcount = $result->num_rows();
-            $json['temail'] = 0;
-            $json['password'] = 0;
-            if ($data[0]->temail > 0) {
+            $result = $this->db->query("SELECT * FROM users where `email` = '$email'");
+            //$data = $result->result();
+            $resultcount = $result->num_rows();
+            //print_r($resultcount)
+            $json['temail'] = $json['password'] = 0;
+            
+            if ($resultcount > 0) {
                 $json['temail'] = 1;
             }
             if ($password != $confpassword) {

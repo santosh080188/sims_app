@@ -27,7 +27,7 @@
         <div class="blue-box login">
             <div class="logo"><a href="#"><img src="images/logo.png" width="253" height="65" alt=""></a></div>
             <div class="login-box">
-                <form method="post"  id="registration-form"  name="registrationForm" action="<?php echo site_url(); ?>/registration/register"> 
+                <form method="post"  id="regis-form"  name="registrationForm" action="<?php echo site_url(); ?>/registration/register"> 
                     <h1>Registration</h1>
                     <ul class="form-login">
                         <li>
@@ -53,8 +53,9 @@
 
     </body>
     <script>
-    /email validation in registration form
-    $("#registration-form").submit(function (e) {
+    //email validation in registration form
+    $("#regis-form").submit(function (e) {
+        alert("sdfsdf");
         var path = "http://localhost/sims_app/";
         var $email = $('#reg-email').val();
         var $firstname = $('#reg-firstname').val();
@@ -68,17 +69,17 @@
             data: {firstname: $firstname, lastname: $lastname, password: $pass, conpassword: $conpass, email: $email,},
             success: function (resp) {
                 $("#reg-emailerror, #reg-passworderror").html("");
-                var data = jQuery.parseJSON(resp);
+                var resultcount = jQuery.parseJSON(resp);
                 var flag = 1;
-                if (data.temail == 0 && data.tuser == 0 && data.captcha == 0) {
+                if (resultcount.temail == 0 && resultcount.password == 0) {
                     $("#registration-form").unbind("submit");
                     $("#registration-form").submit();
                 }
-                else if (data.temail == 1) {
+                else if (resultcount.temail == 1) {
                     $("#reg-emailerror").html("<p>email already exists</p>");
                     flag = 0;
                 }
-                if (data.password == 1) {
+                if (resultcount.password == 1) {
                     $("#reg-passworderror").html("<p>Passwords doesn't match</p>");
                     flag = 0;
                 }
