@@ -19,8 +19,33 @@ class Dashboard extends CI_Controller {
 	 * @see http://codeigniter.com/user_guide/general/urls.html
 	 */
 	public function index()
-	{
-            $this->load->helper('url');
-            $this->load->view('dashboard');
+	{            
+            $this->load->library('pagination');
+            $config = array();
+            $config["base_url"] = base_url() . "dashboard/index";
+            $config["total_rows"] = $this->total_rows_count();
+            $config["per_page"] = 10;
+            $config["uri_segment"] = 3;
+
+            $this->pagination->initialize($config);
+
+            $page = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
+            $data["user_product_list"] = $this->fetch_data($config["per_page"], $page);
+            $data["links"] = $this->pagination->create_links();
+        
+            $this->load->view('dashboard',$data);
 	}
+        public function total_rows_count() {
+            return $this->db->count_all("product");
+        }
+        public function fetch_data($limit, $start) {
+            $this->db->limit($limit, $start);
+            $query = $this->db->get("product");
+
+            if ($query->num_rows() > 0) {
+                return $query->result();
+            }
+            return false;
+        }        
+        
 }
