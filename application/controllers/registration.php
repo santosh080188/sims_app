@@ -5,10 +5,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Registration extends CI_Controller {
     function __construct()
     {
-        // this is your constructor
         parent::__construct();
         $this->load->helper('form');
-        $this->load->helper('url');
     }
 
     public function index() {
@@ -22,10 +20,17 @@ class Registration extends CI_Controller {
                 'email' => $this->input->post('email'),
                 'first_name' => $this->input->post('name'),
                 'last_name' => $this->input->post('nameLast'),
-                'password' => $this->input->post('password'),
+                'password' => md5(trim($this->input->post('password'))),
             );
         $RegistrationData['created_date'] = date('Y-m-d H-i-s');
         $this->db->insert('users', $RegistrationData);
+        $id = $this->db->insert_id();
+            $sessionData = array(
+                'email' => $this->input->post('email'),
+                'firstname' => $this->input->post('name'),
+                'id' => $id
+            );
+            $this->session->set_userdata($sessionData);        
         redirect('dashboard/index/', 'Location');
     }
     public function emailvalidation() {
@@ -40,7 +45,6 @@ class Registration extends CI_Controller {
             $data = $result->result();
             //$resultcount = $result->num_rows();
             $json['temail'] = 0;
-            //$json['tuser'] = 0;
             $json['password'] = 0;
             if ($data[0]->temail > 0) {
                 $json['temail'] = 1;

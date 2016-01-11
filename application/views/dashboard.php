@@ -30,8 +30,8 @@
 		<nav class="nav-top">
 			<ul>
 				<li class="no-bdr"><a href="#myModalContent.html" data-toggle="modal" data-target="#myModal">Get Quotation <i class="Get-Quotation"></i></a><li>
-				<li><a href="index.html">Logout <i class="Logout"></i></a><li>
-				<li><a href="#Username">Username <i class="Username"></i></a><li>
+				<li><a href="<?php echo base_url(); ?>login/logout">Logout <i class="Logout"></i></a><li>
+				<li><a href="#Username"><?php echo $this->session->userdata('firstname')?> <i class="Username"></i></a><li>
 			</ul>
 		</nav>
 	</header>

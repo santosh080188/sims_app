@@ -1,32 +1,32 @@
 <?php
+
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Login extends CI_Controller {
 
-	/**
-	 * Index Page for this controller.
-	 *
-	 * Maps to the following URL
-	 * 		http://example.com/index.php/welcome
-	 *	- or -
-	 * 		http://example.com/index.php/welcome/index
-	 *	- or -
-	 * Since this controller is set as the default controller in
-	 * config/routes.php, it's displayed at http://example.com/
-	 *
-	 * So any other public methods not prefixed with an underscore will
-	 * map to /index.php/welcome/<method_name>
-	 * @see http://codeigniter.com/user_guide/general/urls.html
-	 */
-	public function index()
-	{
-                $this->load->helper('url');
-		$this->load->view('login');
-	}
-         public function signin() {
-        
+    /**
+     * Index Page for this controller.
+     *
+     * Maps to the following URL
+     * 		http://example.com/index.php/welcome
+     * 	- or -
+     * 		http://example.com/index.php/welcome/index
+     * 	- or -
+     * Since this controller is set as the default controller in
+     * config/routes.php, it's displayed at http://example.com/
+     *
+     * So any other public methods not prefixed with an underscore will
+     * map to /index.php/welcome/<method_name>
+     * @see http://codeigniter.com/user_guide/general/urls.html
+     */
+    public function index() {
+        $this->load->helper('url');
+        $this->load->view('login');
+    }
+
+    public function signin() {
+
         $email = $_POST['email'];
-        
         $password = $_POST['password'];
         $query = $this->db->query("SELECT * FROM users WHERE email = '$email' && password = md5('$password')");
         $rowcount = $query->num_rows();
@@ -42,17 +42,15 @@ class Login extends CI_Controller {
                 'id' => $row[0]->id
             );
             echo json_encode($json);
-            //$this->session->set_userdata($sessionData);
-            //$this->session->set_flashdata('msgclass', "success");
-            //$this->session->set_flashdata('msg', 'Login successfully done');
+            $this->session->set_userdata($sessionData);
         } else {
             echo json_encode($json);
         }
     }
-    
-         public function logout() {
+
+    public function logout() {
         $this->session->sess_destroy();
-        redirect('dashboard/index/', 'Location');
+        redirect('login/index/', 'Location');
     }
-    
+
 }

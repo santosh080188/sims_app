@@ -19,7 +19,7 @@ class Dashboard extends CI_Controller {
 	 * @see http://codeigniter.com/user_guide/general/urls.html
 	 */
 	public function index()
-	{            
+	{                       
             $this->load->library('pagination');
             $config = array();
             $config["base_url"] = base_url() . "dashboard/index";
