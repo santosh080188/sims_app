@@ -23,4 +23,36 @@ class Login extends CI_Controller {
                 $this->load->helper('url');
 		$this->load->view('login');
 	}
+         public function signin() {
+        
+        $email = $_POST['email'];
+        
+        $password = $_POST['password'];
+        $query = $this->db->query("SELECT * FROM users WHERE email = '$email' && password = md5('$password')");
+        $rowcount = $query->num_rows();
+        $json['tpassword'] = 0;
+        $json['temail'] = 0;
+        if ($rowcount == 1) {
+            $row = $query->result();
+            $json['tpassword'] = 1;
+            $json['temail'] = 1;
+            $sessionData = array(
+                'email' => $this->input->post('email'),
+                'firstname' => $row[0]->first_name,
+                'id' => $row[0]->id
+            );
+            echo json_encode($json);
+            //$this->session->set_userdata($sessionData);
+            //$this->session->set_flashdata('msgclass', "success");
+            //$this->session->set_flashdata('msg', 'Login successfully done');
+        } else {
+            echo json_encode($json);
+        }
+    }
+    
+         public function logout() {
+        $this->session->sess_destroy();
+        redirect('dashboard/index/', 'Location');
+    }
+    
 }
