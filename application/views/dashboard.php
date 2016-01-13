@@ -98,9 +98,9 @@
 
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
    <div class="modal-dialog">
-      <div class="modal-content">
+      <div class="modal-content" id="quotation">
          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">Ã—</button>
             <h4 class="modal-title" id="myModalLabel">
                Get Quotation
             </h4>
@@ -108,9 +108,10 @@
 		 
          <div class="modal-body">
             <div class="form-left">
+                <p id="error_quote"></p>
 				Choose Product:
 				<ul>
-					<li><input type="text" placeholder="Product"></li>
+					<li><input type="text" placeholder="Product" id="product"></li>
 					<li style="text-align:center;">OR</li>
 					<li>
 						<select placeholder="Manufacturer" id="manufacturer">
@@ -118,7 +119,7 @@
 						</select>
 					</li>
 					<li>
-                                            <select placeholder="Model" disabled="disabled" id="model"><option>Model</option></select>
+                                            <select id="model" placeholder="Model" disabled="disabled" ><option>Model</option></select>
 					</li>
 					<li>
 						<select id="maxSIP" placeholder="Max Concurrent SIP Sessions for the Box" disabled="disabled"><option>Max Concurrent SIP Sessions</option></select>
@@ -132,16 +133,16 @@
 				Choose Service Level:
 				<ul>
 					<li>
-						<select placeholder="Service Level">
-							<option selected>Service Level</option>
-							<option>Foundation</option>
-							<option>Basic</option>
-							<option>Customer Managed</option>
+						<select placeholder="Service Level" id="service_level">
+							<option value='0'>Service Level</option>
+							<option value="1">Foundation</option>
+							<option value="2">Basic</option>
+							<option value="3">Customer Managed</option>
 						</select>
 					</li>
 					<li>
-						<select placeholder="Term based on the service level">
-							<option selected>Term based on the service level</option>
+						<select placeholder="Term based on the service level" id="term">
+							<option value='0'>Term based on the service level</option>
 							<option>12</option>
 							<option>24</option>
 							<option>36</option>
@@ -150,7 +151,7 @@
 						</select>
 					</li>
 					<li class="flt-left bdr-top">
-						<button type="button" class="btn btn-primary">Get Quote</button>
+						<button type="button" id="get_quote" class="btn btn-primary">Get Quote</button>
 						<button type="button" class="btn btn-primary">Reset</button>
 					</li>
 					<li class="dyn-data">
@@ -166,7 +167,7 @@
          
 		 <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Submit</button>
+            <button id="qotation_button" type="button" class="btn btn-primary">Submit</button>
          </div>
       </div><!-- /.modal-content -->
    </div><!-- /.modal-dialog -->

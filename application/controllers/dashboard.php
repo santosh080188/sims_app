@@ -84,7 +84,7 @@ class Dashboard extends CI_Controller {
     }    
     
     public function create_drop_down($object,$selected = 0) {
-        $option = "<option>--- Select ---</option>";
+        $option = "<option value='0'>--- Select ---</option>";
         foreach($object as $row) {
             $option .= "<option value='".$row->id."'>".$row->val."</option>";
         }
