@@ -14,9 +14,10 @@
 <![endif]-->
 
 <script src="<?php echo base_url(); ?>assets/js/angular.min.js"></script>
-<script src="<?php echo base_url(); ?>assets/js/app.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+<script src="<?php echo base_url(); ?>assets/js/quote.js"></script>
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 
 <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/style.css" />
 <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/responsive.css" />
@@ -112,39 +113,18 @@
 					<li><input type="text" placeholder="Product"></li>
 					<li style="text-align:center;">OR</li>
 					<li>
-						<select placeholder="Manufacturer">
-							<option selected>Manufacturer</option>
-							<option>Genband</option>
-							<option>Oracle</option>
-							<option>Sonus</option>
+						<select placeholder="Manufacturer" id="manufacturer">
+							<?php echo $manufacturer;?>
 						</select>
 					</li>
 					<li>
-						<select placeholder="Model" disabled="disabled">
-							<option selected>Model</option>
-							<option>QFlex</option>
-							<option>VME</option>
-							<option>SWE</option>
-							<option>AP 6300</option>
-						</select>
+                                            <select placeholder="Model" disabled="disabled" id="model"><option>Model</option></select>
 					</li>
 					<li>
-						<select placeholder="Max Concurrent SIP Sessions for the Box" disabled="disabled">
-							<option selected>Max Concurrent SIP Sessions for the Box</option>
-							<option>QFlex</option>
-							<option>VME</option>
-							<option>SWE</option>
-							<option>AP 6300</option>
-						</select>
+						<select id="maxSIP" placeholder="Max Concurrent SIP Sessions for the Box" disabled="disabled"><option>Max Concurrent SIP Sessions</option></select>
 					</li>
 					<li>
-						<select placeholder="Package Concurrent SIP Channels" disabled="disabled">
-							<option selected>Package Concurrent SIP Channels</option>
-							<option>QFlex</option>
-							<option>VME</option>
-							<option>SWE</option>
-							<option>AP 6300</option>
-						</select>
+						<select id="packageSIP" placeholder="Package Concurrent SIP Channels" disabled="disabled"><option>Package Concurrent SIP Channels</option></select>
 					</li>
 				</ul>
 			</div>
