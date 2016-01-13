@@ -43,5 +43,28 @@ $( document ).ready(function() {
             $('#packageSIP').html(response);
           }
       });
-  })  
+  })
+  
+  
+  $("#get_quote").on('click', function() {
+      var manufacturer = $("#manufacturer").find("option:selected").text();
+      var model = $("#model").find("option:selected").text();
+      var maxSIP = $("#maxSIP").find("option:selected").text();
+      var packageSIP = $("#packageSIP").find("option:selected").text();
+      var service_level = $("#service_level").val();
+      var term = $("#term").val();
+      var product = $("#product").val();   
+      $.ajax({
+        method: "POST",
+        url: "dashboard/get_quote/",
+        data: { product:product,manufacturer: manufacturer,model: model,maxSIP: maxSIP,packageSIP: packageSIP,service_level: service_level,term: term }
+      }).done(function(response) {
+          if(response) {
+            var obj = jQuery.parseJSON(response);
+            $("#quoteType").html(": "+obj.type);
+            $("#quotencr").html(": "+obj.nrc);
+            $("#quotemrc").html(": "+obj.mrc);
+          }
+      });
+  })
 });

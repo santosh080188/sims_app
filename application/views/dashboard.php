@@ -98,7 +98,7 @@
 
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
    <div class="modal-dialog">
-      <div class="modal-content">
+      <div class="modal-content" id="quotation">
          <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
             <h4 class="modal-title" id="myModalLabel">
@@ -108,9 +108,10 @@
 		 
          <div class="modal-body">
             <div class="form-left">
+                <p id="error_quote"></p>
 				Choose Product:
 				<ul>
-					<li><input type="text" placeholder="Product"></li>
+					<li><input type="text" placeholder="Product" id="product"></li>
 					<li style="text-align:center;">OR</li>
 					<li>
 						<select placeholder="Manufacturer" id="manufacturer">
@@ -132,15 +133,15 @@
 				Choose Service Level:
 				<ul>
 					<li>
-						<select placeholder="Service Level">
+						<select placeholder="Service Level" id="service_level">
 							<option selected>Service Level</option>
-							<option>Foundation</option>
-							<option>Basic</option>
-							<option>Customer Managed</option>
+							<option value="1">Foundation</option>
+							<option value="2">Basic</option>
+							<option value="3">Customer Managed</option>
 						</select>
 					</li>
 					<li>
-						<select placeholder="Term based on the service level">
+						<select placeholder="Term based on the service level" id="term">
 							<option selected>Term based on the service level</option>
 							<option>12</option>
 							<option>24</option>
@@ -150,14 +151,14 @@
 						</select>
 					</li>
 					<li class="flt-left bdr-top">
-						<button type="button" class="btn btn-primary">Get Quote</button>
+						<button type="button" id="get_quote" class="btn btn-primary">Get Quote</button>
 						<button type="button" class="btn btn-primary">Reset</button>
 					</li>
 					<li class="dyn-data">
 						AT&T customer pricing Quote is
-						<label>Installation type <span>: Remote</span></label>
-						<label>Deployment Non recurring Cost <span>: $ 17,000</span></label>
-						<label>Monthly Recurring Cost (MRC) <span>: $ 460</span></label>
+						<label>Installation type <span id="quoteType">: Remote</span></label>
+						<label>Deployment Non recurring Cost <span id="quotencr">: $ 17,000</span></label>
+						<label>Monthly Recurring Cost (MRC) <span id="quotemrc">: $ 460</span></label>
 					</li>
 				</ul>
 			</div>	
@@ -166,7 +167,7 @@
          
 		 <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Submit</button>
+            <button id="qotation_button" type="button" class="btn btn-primary">Submit</button>
          </div>
       </div><!-- /.modal-content -->
    </div><!-- /.modal-dialog -->

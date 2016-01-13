@@ -81,10 +81,59 @@ class Dashboard extends CI_Controller {
             }            
         }
         return false;
-    }    
+    }
+    
+    public function get_sku() {
+        $this->db->select("id,sku");
+        $query = $this->db->get("product");
+        
+        if ($query->num_rows() > 0) {
+            $sku = array();
+            foreach ($query->result() as $row) {
+                $sku[] = $row->sku;
+            }
+            echo json_encode($sku);
+        } else {
+            echo false;
+        }
+    }
+    public function get_quote() {
+        //print_r($_POST);
+        $manufacturer = $this->input->post('manufacturer');
+        $model = $this->input->post('model');
+        $maxSIP = $this->input->post('maxSIP');
+        $packageSIP = $this->input->post('packageSIP');
+        $service_level = $this->input->post('service_level');
+        $term = $this->input->post('term');
+        $product = $this->input->post('product');
+        
+        if($product != "") {
+            $array = array("sku"=>trim($product),'level_id' => $service_level);
+        } else {
+            $array = array( 'manufacturer' => $manufacturer, 
+                            'model_number' => $model,
+                            'concurrent_SIP_sessions' => $maxSIP,
+                            'package_concurrent_SIP' => $packageSIP,
+                            'level_id' => $service_level);            
+        }
+        $this->db->select('pricing.*');
+        $this->db->where($array); 
+        $this->db->from('product');
+        $this->db->join('pricing', 'product.id = pricing.product_id');  
+        $query = $this->db->get();
+        //echo $this->db->last_query();
+        if($query->num_rows() > 0) {
+            foreach ($query->result() as $row) {
+                $data = array('type'=>$row->type,'nrc'=>$row->nrc,'mrc'=>$row->{$term.'M'},);
+            }
+            echo json_encode($data);
+        }
+        echo false;
+        //echo $this->db->last_query();
+    }
     
     public function create_drop_down($object,$selected = 0) {
-        $option = "<option>--- Select ---</option>";
+        $option = "<option value='0'>--- Select ---</option>";
         foreach($object as $row) {
             $option .= "<option value='".$row->id."'>".$row->val."</option>";
         }
