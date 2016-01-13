@@ -42,7 +42,7 @@
                         <li><input id="reg-password" type="Password" name="password" class="form-control" placeholder="Password" required></li>
                         <li><input id="reg-confirm-password" type="Password" name="confirmPassword" class="form-control"  placeholder="Confirm Password" required></li>
                         <li>
-                            <button type="reset" class="btn btn-primary">Cancel</button>
+                            <a href="<?php echo site_url(); ?>"><button type="button" class="btn btn-primary">Cancel</button></a>
                             <input type="submit" class="btn btn-primary" value="Signup">
                         </li>
                     </ul>
@@ -55,7 +55,6 @@
     <script>
     //email validation in registration form
     $("#regis-form").submit(function (e) {
-        alert("sdfsdf");
         var path = "http://localhost/sims_app/";
         var $email = $('#reg-email').val();
         var $firstname = $('#reg-firstname').val();
