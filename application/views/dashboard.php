@@ -100,7 +100,7 @@
    <div class="modal-dialog">
       <div class="modal-content" id="quotation">
          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">Ã—</button>
             <h4 class="modal-title" id="myModalLabel">
                Get Quotation
             </h4>
@@ -119,7 +119,7 @@
 						</select>
 					</li>
 					<li>
-                                            <select placeholder="Model" disabled="disabled" id="model"><option>Model</option></select>
+                                            <select id="model" placeholder="Model" disabled="disabled" ><option>Model</option></select>
 					</li>
 					<li>
 						<select id="maxSIP" placeholder="Max Concurrent SIP Sessions for the Box" disabled="disabled"><option>Max Concurrent SIP Sessions</option></select>
@@ -134,7 +134,7 @@
 				<ul>
 					<li>
 						<select placeholder="Service Level" id="service_level">
-							<option selected>Service Level</option>
+							<option value='0'>Service Level</option>
 							<option value="1">Foundation</option>
 							<option value="2">Basic</option>
 							<option value="3">Customer Managed</option>
@@ -142,7 +142,7 @@
 					</li>
 					<li>
 						<select placeholder="Term based on the service level" id="term">
-							<option selected>Term based on the service level</option>
+							<option value='0'>Term based on the service level</option>
 							<option>12</option>
 							<option>24</option>
 							<option>36</option>

@@ -1,4 +1,49 @@
 $( document ).ready(function() {
+    $("#qotation_button").on('click', function() {
+        
+         var error = 0;
+        var product = $('#product').val();        
+        var manufacturer = $('#manufacturer').val();
+        var model = $('#model').val();
+        var maxSIP = $('#maxSIP').val();
+        var packageSIP = $('#packageSIP').val(); 
+        var service_level = $('#service_level').val();
+        var term = $('#term').val();
+        
+        if (product == '' && manufacturer == '0') {
+            alert('You should select product / Manufacturer.');
+            error = 1;
+        }
+        if (product == '' && manufacturer != '0') {        
+            if(model == '0') {
+                error = 1;
+                alert('You should select a Model.');
+            } else
+            if(maxSIP == '0') {
+                error = 1;
+                alert('You should select a maxSIP.');
+            } else            
+            if(packageSIP == '0') {
+                error = 1;
+                alert('You should select a packageSIP.');
+            }            
+        }
+        
+        if (service_level == '0') {
+            error = 1;
+            alert('You should select a service_level.');
+        }
+        if (term == '0') {
+            error = 1;
+            alert('You should select a term.');
+        }        
+        if (error) {
+            return false;
+        } else {
+            return true;
+        }
+         });
+          
     
   $("#manufacturer").on('change', function() {
       var selected = $(this).find("option:selected").text();
@@ -12,6 +57,7 @@ $( document ).ready(function() {
             $('#model').removeAttr('disabled');
             $('#model').html(response);
           }
+          
       });
   });
   
