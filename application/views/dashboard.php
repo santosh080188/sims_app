@@ -57,33 +57,34 @@
 							<th>Ins Type</th>
 							<th>MRC</th>
 							<th>NRC</th>
-							<th>PDF</th>
 						</tr>
 					</thead>
 					
 					<tbody>
                                             <?php
-                                                $loop = 0;
+                                                $loop = 0;                                                
+                                                if((!$user_product_list)) {
+                                                    echo "<tr><td colspan='14'> No record found</td></tr>";
+                                                } else {
                                                 foreach ($user_product_list as $obj) { 
                                                    // print_r($obj);exit();
                                                 ?>
 						<tr>
 							<td><?php echo ++$loop?></td>
-							<td><?php echo $loop."aq"?></td>
+							<td><?php echo $obj->id?></td>
 							<td><?php echo date('Y-m-d');?></td>
 							<td><?php echo $obj->sku?></td>
 							<td><?php echo $obj->manufacturer?></td>
 							<td><?php echo $obj->model_number?></td>
 							<td><?php echo $obj->concurrent_SIP_sessions?></td>
 							<td><?php echo $obj->package_concurrent_SIP?></td>
-							<td>Foundation</td>
-							<td>12</td>
-							<td>Remote</td>
-							<td><span>$</span> 2,650</td>
-							<td><span>$</span> 10,000</td>
-							<td><a href="#"><img src="<?php echo base_url(); ?>assets/images/icon-pdf.png" width="21" height="19" alt=""></a></td>
+							<td><?php echo $obj->level?></td>
+							<td><?php echo ucfirst($obj->term)?></td>
+							<td><?php echo ucfirst($obj->type)?></td>
+							<td><?php echo $obj->mrc?></td>
+							<td><?php echo $obj->nrc?></td>
 						</tr>
-                                            <?php } ?>						
+                                         <?php } } ?>						
 					</thead>
 				</table>
             </div><!--Responsive DataTable End-->

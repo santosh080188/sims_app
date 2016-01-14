@@ -21,13 +21,22 @@ class Dashboard extends CI_Controller {
     }
 
     public function total_rows_count() {
-        return $this->db->count_all("product");
+        $this->db->where(array('user_id' => $this->session->userdata("id")));
+        $this->db->from('user_product');
+        return $this->db->count_all_results();        
+
     }
 
     public function fetch_data($limit, $start) {
+        $this->db->select('product.*,user_product.*,level.level');        
+        $this->db->from('user_product');
+        $this->db->where(array('user_id' => $this->session->userdata("id")));        
+        $this->db->join('product', 'product.id = user_product.product_id' ,'LEFT');  
+        $this->db->join('level', 'level.id = user_product.level_id','LEFT');
+        $this->db->order_by("user_product.created_date desc");
         $this->db->limit($limit, $start);
-        $query = $this->db->get("product");
-
+        $query = $this->db->get();
+        //echo $this->db->last_query();
         if ($query->num_rows() > 0) {
             return $query->result();
         }
@@ -131,6 +140,39 @@ class Dashboard extends CI_Controller {
         echo false;
         //echo $this->db->last_query();
     }
+    
+    public function submit_quote() {
+        //print_r($_POST);
+        $manufacturer = $this->input->post('manufacturer');
+        $model = $this->input->post('model');
+        $maxSIP = $this->input->post('maxSIP');
+        $packageSIP = $this->input->post('packageSIP');
+        $service_level = $this->input->post('service_level');
+        $term = $this->input->post('term');
+        $product = $this->input->post('product');
+        
+        if($product != "") {
+            $array = array("sku"=>trim($product),'level_id' => $service_level);
+        } else {
+            $array = array( 'manufacturer' => $manufacturer, 
+                            'model_number' => $model,
+                            'concurrent_SIP_sessions' => $maxSIP,
+                            'package_concurrent_SIP' => $packageSIP,
+                            'level_id' => $service_level);            
+        }
+        $this->db->select('product.id as pid,pricing.*');
+        $this->db->where($array); 
+        $this->db->from('product');
+        $this->db->join('pricing', 'product.id = pricing.product_id');  
+        $query = $this->db->get(); 
+       
+        if($query->num_rows() > 0) {
+            $row = $query->result();
+            $insert = array("term"=>$term,"nrc"=>$row[0]->nrc,"mrc"=>$row[0]->{$term.'M'},"type"=>$row[0]->type,"user_id"=>$this->session->userdata("id"),"product_id"=>$row[0]->pid,"level_id"=>$row[0]->level_id,"created_date"=>date('Y-m-d H:i:s'));
+            $this->db->insert("user_product",$insert);
+        }
+         //echo $this->db->last_query();exit();
+    }    
     
     public function create_drop_down($object,$selected = 0) {
         $option = "<option value='0'>--- Select ---</option>";

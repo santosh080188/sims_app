@@ -40,7 +40,18 @@ $( document ).ready(function() {
         if (error) {
             return false;
         } else {
-            return true;
+            //submit the form is all validations are done
+            var manufacturer = $("#manufacturer").find("option:selected").text();
+            var model = $("#model").find("option:selected").text();
+            var maxSIP = $("#maxSIP").find("option:selected").text();
+            var packageSIP = $("#packageSIP").find("option:selected").text();
+            $.ajax({
+              method: "POST",
+              url: "dashboard/submit_quote/",
+              data: {manufacturer: manufacturer,model: model,maxSIP: maxSIP,packageSIP: packageSIP,service_level: service_level,term: term }
+            }).done(function(response) {
+                document.location.reload();
+            });            
         }
          });
           
