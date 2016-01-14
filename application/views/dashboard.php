@@ -100,7 +100,7 @@
    <div class="modal-dialog">
       <div class="modal-content" id="quotation">
          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">Ã—</button>
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
             <h4 class="modal-title" id="myModalLabel">
                Get Quotation
             </h4>
@@ -152,7 +152,7 @@
 					</li>
 					<li class="flt-left bdr-top">
 						<button type="button" id="get_quote" class="btn btn-primary">Get Quote</button>
-						<button type="button" class="btn btn-primary">Reset</button>
+						<button type="reset" class="btn btn-primary">Reset</button>
 					</li>
 					<li class="dyn-data">
 						AT&T customer pricing Quote is

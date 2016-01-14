@@ -116,7 +116,7 @@ class Dashboard extends CI_Controller {
                             'package_concurrent_SIP' => $packageSIP,
                             'level_id' => $service_level);            
         }
-        $this->db->select('pricing.*');
+        $this->db->select('product.id as pid,pricing.*');
         $this->db->where($array); 
         $this->db->from('product');
         $this->db->join('pricing', 'product.id = pricing.product_id');  
@@ -124,7 +124,7 @@ class Dashboard extends CI_Controller {
         //echo $this->db->last_query();
         if($query->num_rows() > 0) {
             foreach ($query->result() as $row) {
-                $data = array('type'=>$row->type,'nrc'=>$row->nrc,'mrc'=>$row->{$term.'M'},);
+                $data = array('pid'=>$row->pid,'type'=>$row->type,'nrc'=>$row->nrc,'mrc'=>$row->{$term.'M'},);
             }
             echo json_encode($data);
         }
