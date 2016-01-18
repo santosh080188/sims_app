@@ -88,4 +88,5 @@ button.close{color:#fff; opacity:1; text-shadow:0 0px 0 #fff;}
 .modal-body select:disabled {color:#ccc; opacity:0.8; cursor:no-drop;}
 .modal-body .dyn-data label{width:100%; margin:0 0 5px 0; float:left; font-weight:normal; font-size:12px;}
 .modal-body .dyn-data label span{width:69px; margin:0 0 0 5px; float:right; text-align:left;}
+#error_product{color:red;}
 

@@ -2,7 +2,8 @@
 <html>
 <head>
 <title>Smart IMS Quotation Application - Dashboard</title>
-
+<meta content="IE=Edge,chrome=1" http-equiv="X-UA-Compatible">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
 <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,300' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
@@ -108,8 +109,9 @@
          </div>
 		 
          <div class="modal-body">
+             <div id="error_product"></div>
+             
             <div class="form-left">
-                <p id="error_quote"></p>
 				Choose Product:
 				<ul>
 					<li><input type="text" placeholder="Product" id="product"></li>
