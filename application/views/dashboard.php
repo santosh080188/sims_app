@@ -159,9 +159,9 @@
 					</li>
 					<li class="dyn-data">
 						AT&T customer pricing Quote is
-						<label>Installation type <span id="quoteType">: - </span></label>
-						<label>Deployment Non recurring Cost <span id="quotencr">: - </span></label>
-						<label>Monthly Recurring Cost (MRC) <span id="quotemrc">: - </span></label>
+						<label id="item1">Installation type <span id="quoteType"></span></label>
+						<label>Deployment Non recurring Cost <span id="quotencr"></span></label>
+						<label>Monthly Recurring Cost (MRC) <span id="quotemrc"></span></label>
 					</li>
 				</ul>
 			</div>	

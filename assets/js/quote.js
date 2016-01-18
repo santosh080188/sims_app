@@ -1,6 +1,5 @@
 $(document).ready(function () {
     $("#qotation_button,#get_quote").on('click', function () {
-        alert($(this).html());
         var error = 0;
         var product = $('#product').val();
         var manufacturer = $('#manufacturer').val();
@@ -31,28 +30,33 @@ $(document).ready(function () {
 
         if (service_level == '0') {
             error = 1;
-            $("#error_product").append("<p>please select service_level</p>");
+            $("#error_product").append("<p>Please select service_level</p>");
         }
         if (term == '0') {
             error = 1;
-            $("#error_product").append("<p>please select term</p>");
+            $("#error_product").append("<p>Please select term</p>");
         }
-        if (error) {
+        if ((error)) {
             return false;
         } else
         if (($(this).html()) == 'Submit') {
-            //submit the form after all validations are done
-            var manufacturer = $("#manufacturer").find("option:selected").text();
-            var model = $("#model").find("option:selected").text();
-            var maxSIP = $("#maxSIP").find("option:selected").text();
-            var packageSIP = $("#packageSIP").find("option:selected").text();
-            $.ajax({
-                method: "POST",
-                url: "dashboard/submit_quote/",
-                data: {product: product, manufacturer: manufacturer, model: model, maxSIP: maxSIP, packageSIP: packageSIP, service_level: service_level, term: term}
-            }).done(function (response) {
-                document.location.reload();
-            });
+            if ($('#item1 span').html()== '') {
+                $("#error_product").append("<p>Please get quotation</p>");
+                return false;
+            } else {
+                //submit the form after all validations are done
+                var manufacturer = $("#manufacturer").find("option:selected").text();
+                var model = $("#model").find("option:selected").text();
+                var maxSIP = $("#maxSIP").find("option:selected").text();
+                var packageSIP = $("#packageSIP").find("option:selected").text();
+                $.ajax({
+                    method: "POST",
+                    url: "dashboard/submit_quote/",
+                    data: {product: product, manufacturer: manufacturer, model: model, maxSIP: maxSIP, packageSIP: packageSIP, service_level: service_level, term: term}
+                }).done(function (response) {
+                    document.location.reload();
+                });
+            }
         }
         else {
             var manufacturer = $("#manufacturer").find("option:selected").text();
@@ -120,6 +124,6 @@ $(document).ready(function () {
             }
         });
     })
-  
+
 });
 
