@@ -64,7 +64,7 @@
                                             <?php
                                                 $loop = 0;                                                
                                                 if((!$user_product_list)) {
-                                                    echo "<tr><td colspan='14'> No record found</td></tr>";
+                                                    echo "<tr><td colspan='14' style='text-align:center'> No record found</td></tr>";
                                                 } else {
                                                 foreach ($user_product_list as $obj) { 
                                                    // print_r($obj);exit();
@@ -157,9 +157,9 @@
 					</li>
 					<li class="dyn-data">
 						AT&T customer pricing Quote is
-						<label>Installation type <span id="quoteType">: Remote</span></label>
-						<label>Deployment Non recurring Cost <span id="quotencr">: $ 17,000</span></label>
-						<label>Monthly Recurring Cost (MRC) <span id="quotemrc">: $ 460</span></label>
+						<label>Installation type <span id="quoteType">: - </span></label>
+						<label>Deployment Non recurring Cost <span id="quotencr">: - </span></label>
+						<label>Monthly Recurring Cost (MRC) <span id="quotemrc">: - </span></label>
 					</li>
 				</ul>
 			</div>	

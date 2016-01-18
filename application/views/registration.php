@@ -71,8 +71,8 @@
                 var resultcount = jQuery.parseJSON(resp);
                 var flag = 1;
                 if (resultcount.temail == 0 && resultcount.password == 0) {
-                    $("#registration-form").unbind("submit");
-                    $("#registration-form").submit();
+                    $("#regis-form").unbind("submit");
+                    $("#regis-form").submit();
                 }
                 else if (resultcount.temail == 1) {
                     $("#reg-emailerror").html("<p>email already exists</p>");

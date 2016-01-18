@@ -48,7 +48,7 @@ $( document ).ready(function() {
             $.ajax({
               method: "POST",
               url: "dashboard/submit_quote/",
-              data: {manufacturer: manufacturer,model: model,maxSIP: maxSIP,packageSIP: packageSIP,service_level: service_level,term: term }
+              data: {product:product,manufacturer: manufacturer,model: model,maxSIP: maxSIP,packageSIP: packageSIP,service_level: service_level,term: term }
             }).done(function(response) {
                 document.location.reload();
             });            
