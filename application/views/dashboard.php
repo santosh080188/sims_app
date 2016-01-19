@@ -5,23 +5,16 @@
         <meta content="IE=Edge,chrome=1" http-equiv="X-UA-Compatible">
         <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
         <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,300' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
-        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
-          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-        <![endif]-->
-<!script src="<?php echo base_url(); ?>assets/js/angular.min.js"></script>
-<script src="//code.jquery.com/jquery-1.10.2.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-<script src="<?php echo base_url(); ?>assets/js/quote.js"></script>
-<!script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+<script src="<?php echo base_url(); ?>assets/js/bootstrap.min.js"></script>
+<script src="<?php echo base_url(); ?>assets/js/quote.js"></script>
+<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap-theme.min.css"/>
+<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap.min.css"/>
 <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/style.css" />
 <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/responsive.css" />
 <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/jquery-ui.css">
+<link rel="shortcut icon" href="<?php echo base_url(); ?>assets/images/favicon.ico" type="image/vnd.microsoft.icon" />
   <script src="<?php echo base_url(); ?>assets/js/jquery-ui.js"></script>
   <style>
   .ui-autocomplete {
