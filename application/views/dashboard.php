@@ -79,27 +79,6 @@
                     </ul>
                 </nav>
             </header>
-
-=======
-        <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/style.css" />
-        <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/responsive.css" />
-    </head>
-
-    <body>
-
-        <div class="main">
-            <header class="header">
-                <figure class="logo"><img src="<?php echo base_url(); ?>assets/images/logo.png" width="253" height="65" alt=""></figure>
-                <nav class="nav-top">
-                    <ul>
-                        <li class="no-bdr"><a href="#myModalContent.html" data-toggle="modal" data-target="#myModal">Get Quotation <i class="Get-Quotation"></i></a><li>
-                        <li><a href="<?php echo base_url(); ?>login/logout">Logout <i class="Logout"></i></a><li>
-                        <li><a href="#Username"><?php echo $this->session->userdata('firstname') ?> <i class="Username"></i></a><li>
-                    </ul>
-                </nav>
-            </header>
-
->>>>>>> 250d91da4461c6fe0bf511780cb2fd90f2f45b8c
             <div class="container">
                 <h1>Dashboard - <span>Quotation</span></h1>
                 <div class="content">
@@ -156,13 +135,10 @@
                     <div class="pagination">
 <?php echo $links ?>
                     </div>
-
-<<<<<<< HEAD
-<<<<<<< 944d9befb9cbb1d278d9b2156b1252c8ee4084a7
                 </div><!--Content End-->
             </div><!--Container End-->
         </div><!--Main End-->
-=======
+
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
    <div class="modal-dialog">
       <div class="modal-content" id="quotation">
@@ -239,173 +215,6 @@
       </div><!-- /.modal-content -->
    </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
->>>>>>> Auto suggest for product
 
-
-        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content" id="quotation">
-                    <form>
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                            <h4 class="modal-title" id="myModalLabel">
-                                Get Quotation
-                            </h4>
-                        </div>
-
-                        <div class="modal-body">
-                            <div id="error_product"></div>
-
-                            <div class="form-left">
-                                Choose Product:
-                                <ul>
-                                    <li><input type="text" placeholder="Product" id="product"></li>
-                                    <li style="text-align:center;">OR</li>
-                                    <li>
-                                        <select placeholder="Manufacturer" id="manufacturer"><?php echo $manufacturer; ?>
-                                        </select>
-                                    </li>
-                                    <li>
-                                        <select id="model" placeholder="Model" disabled="disabled" ><option>Model</option></select>
-                                    </li>
-                                    <li>
-                                        <select id="maxSIP" placeholder="Max Concurrent SIP Sessions for the Box" disabled="disabled"><option>Max Concurrent SIP Sessions</option></select>
-                                    </li>
-                                    <li>
-                                        <select id="packageSIP" placeholder="Package Concurrent SIP Channels" disabled="disabled"><option>Package Concurrent SIP Channels</option></select>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="form-right">
-                                Choose Service Level:
-                                <ul>
-                                    <li>
-                                        <select placeholder="Service Level" id="service_level">
-                                            <option value='0'>Service Level</option>
-                                            <option value="1">Foundation</option>
-                                            <option value="2">Basic</option>
-                                            <option value="3">Customer Managed</option>
-                                        </select>
-                                    </li>
-                                    <li>
-                                        <select placeholder="Term based on the service level" id="term">
-                                            <option value='0'>Term based on the service level</option>
-                                            <option>12</option>
-                                            <option>24</option>
-                                            <option>36</option>
-                                            <option>48</option>
-                                            <option>60</option>
-                                        </select>
-                                    </li>
-                                    <li class="flt-left bdr-top">
-                                        <button type="button" id="get_quote" class="btn btn-primary">Get Quote</button>
-                                        <button type="reset" class="btn btn-primary" value="Reset">Reset</button>
-                                    </li>
-                                    <li class="dyn-data">
-                                        AT&T customer pricing Quote is
-                                        <label id="item1">Installation type <span id="quoteType"></span></label>
-                                        <label>Deployment Non recurring Cost <span id="quotencr"></span></label>
-                                        <label>Monthly Recurring Cost (MRC) <span id="quotemrc"></span></label>
-                                    </li>
-                                </ul>
-                            </div>	
-                            <div class="clear-both"></div>
-                        </div>
-
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                            <button id="qotation_button" type="button" class="btn btn-primary">Submit</button>
-                        </div>
-                    </form>
-                </div><!-- /.modal-content -->
-            </div><!-- /.modal-dialog -->
-        </div><!-- /.modal -->
-
-=======
-                </div><!--Content End-->
-            </div><!--Container End-->
-        </div><!--Main End-->
-
-
-        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content" id="quotation">
-                    <form>
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                            <h4 class="modal-title" id="myModalLabel">
-                                Get Quotation
-                            </h4>
-                        </div>
-
-                        <div class="modal-body">
-                            <div id="error_product"></div>
-
-                            <div class="form-left">
-                                Choose Product:
-                                <ul>
-                                    <li><input type="text" placeholder="Product" id="product"></li>
-                                    <li style="text-align:center;">OR</li>
-                                    <li>
-                                        <select placeholder="Manufacturer" id="manufacturer"><?php echo $manufacturer; ?>
-                                        </select>
-                                    </li>
-                                    <li>
-                                        <select id="model" placeholder="Model" disabled="disabled" ><option>Model</option></select>
-                                    </li>
-                                    <li>
-                                        <select id="maxSIP" placeholder="Max Concurrent SIP Sessions for the Box" disabled="disabled"><option>Max Concurrent SIP Sessions</option></select>
-                                    </li>
-                                    <li>
-                                        <select id="packageSIP" placeholder="Package Concurrent SIP Channels" disabled="disabled"><option>Package Concurrent SIP Channels</option></select>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="form-right">
-                                Choose Service Level:
-                                <ul>
-                                    <li>
-                                        <select placeholder="Service Level" id="service_level">
-                                            <option value='0'>Service Level</option>
-                                            <option value="1">Foundation</option>
-                                            <option value="2">Basic</option>
-                                            <option value="3">Customer Managed</option>
-                                        </select>
-                                    </li>
-                                    <li>
-                                        <select placeholder="Term based on the service level" id="term">
-                                            <option value='0'>Term based on the service level</option>
-                                            <option>12</option>
-                                            <option>24</option>
-                                            <option>36</option>
-                                            <option>48</option>
-                                            <option>60</option>
-                                        </select>
-                                    </li>
-                                    <li class="flt-left bdr-top">
-                                        <button type="button" id="get_quote" class="btn btn-primary">Get Quote</button>
-                                        <button type="reset" class="btn btn-primary" value="Reset">Reset</button>
-                                    </li>
-                                    <li class="dyn-data">
-                                        AT&T customer pricing Quote is
-                                        <label id="item1">Installation type <span id="quoteType"></span></label>
-                                        <label>Deployment Non recurring Cost <span id="quotencr"></span></label>
-                                        <label>Monthly Recurring Cost (MRC) <span id="quotemrc"></span></label>
-                                    </li>
-                                </ul>
-                            </div>	
-                            <div class="clear-both"></div>
-                        </div>
-
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                            <button id="qotation_button" type="button" class="btn btn-primary">Submit</button>
-                        </div>
-                    </form>
-                </div><!-- /.modal-content -->
-            </div><!-- /.modal-dialog -->
-        </div><!-- /.modal -->
-
->>>>>>> 250d91da4461c6fe0bf511780cb2fd90f2f45b8c
     </body>
 </html>
