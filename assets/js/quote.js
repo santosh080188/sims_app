@@ -129,8 +129,7 @@ $(document).ready(function () {
         });
     });
     
-    $("#product").on('change', function () {
-        console.log($(this).val());
+    $("#product").blur(function() { 
         $.ajax({
             method: "POST",
             url: "dashboard/get_all_data/",
@@ -153,7 +152,7 @@ $(document).ready(function () {
                     $("#error_product").html("");
                     $('#manufacturer').html("<option value='0'>Manufacturer</option>");
                     $('#manufacturer').removeAttr('disabled');
-                    $("#error_product").append("<p>Please select the correct product / choose below catogeries </p>");
+                    $("#error_product").append("<p>Please select the correct product</p>");
                 }
 
             }
