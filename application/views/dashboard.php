@@ -142,23 +142,24 @@
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
    <div class="modal-dialog">
       <div class="modal-content" id="quotation">
+                    <form>
          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
             <h4 class="modal-title" id="myModalLabel">
                Get Quotation
             </h4>
          </div>
 		 
          <div class="modal-body">
+                            <div id="error_product"></div>
+
             <div class="form-left">
-                <p id="error_quote"></p>
 				Choose Product:
 				<ul>                                    
 					<li><input type="text" placeholder="Product" id="product"></li>
 					<li style="text-align:center;">OR</li>
 					<li>
-						<select placeholder="Manufacturer" id="manufacturer">
-							<?php echo $manufacturer;?>
+                                        <select placeholder="Manufacturer" id="manufacturer"><?php echo $manufacturer; ?>
 						</select>
 					</li>
 					<li>
@@ -195,13 +196,13 @@
 					</li>
 					<li class="flt-left bdr-top">
 						<button type="button" id="get_quote" class="btn btn-primary">Get Quote</button>
-						<button type="reset" class="btn btn-primary">Reset</button>
+                                        <button type="reset" class="btn btn-primary" value="Reset">Reset</button>
 					</li>
 					<li class="dyn-data">
 						AT&T customer pricing Quote is
-						<label>Installation type <span id="quoteType">: - </span></label>
-						<label>Deployment Non recurring Cost <span id="quotencr">: - </span></label>
-						<label>Monthly Recurring Cost (MRC) <span id="quotemrc">: - </span></label>
+                                        <label id="item1">Installation type <span id="quoteType"></span></label>
+                                        <label>Deployment Non recurring Cost <span id="quotencr"></span></label>
+                                        <label>Monthly Recurring Cost (MRC) <span id="quotemrc"></span></label>
 					</li>
 				</ul>
 			</div>	
@@ -212,6 +213,7 @@
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             <button id="qotation_button" type="button" class="btn btn-primary">Submit</button>
          </div>
+                    </form>
       </div><!-- /.modal-content -->
    </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
