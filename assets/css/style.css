@@ -75,7 +75,7 @@ input[type="button"]:hover, input[type="submit"]:hover, button[type="submit"]:ho
 .pagination a, .pagination a:hover, .pagination a.active{font-size:12px; margin:0 0 0 1px; padding:2px 8px; text-decoration:none;}
 
 /*Modal*/
-.modal-dialog{width:80%;}
+.modal-dialog{width:55%;}
 .modal-content{background-color:#4db1e2; color:#fff; float:left;}
 .modal-body, .modal-footer{width:100%; float:left;}
 .modal-title{color:#fff; font-size:30px;}
@@ -91,3 +91,4 @@ button.close{color:#fff; opacity:1; text-shadow:0 0px 0 #fff;}
 .modal-body .dyn-data label span{width:69px; margin:0 0 0 5px; float:right; text-align:left;}
 #error_product{color:red; font-size:12px; margin:0 0 8px 0; padding:0;}
 #error_product p{color:red; margin:0 0 3px 0; padding:4px 8px; background:#cae7f5;} 
+

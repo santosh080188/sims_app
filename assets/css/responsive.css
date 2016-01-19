@@ -20,23 +20,31 @@
 }
 
 @media (max-width:1024px) {
-	
+	/*Popup*/
+	.modal-dialog{width:70%;}
+	.modal-body .dyn-data label{font-size: 12px;}
 }
 
 @media (max-width:980px) {
-
+	/*Popup*/
+	.modal-body .dyn-data label{font-size: 12px;}
 }
 
 @media (max-width:900px) {
-
+	/*Popup*/
+	.modal-body .dyn-data label{font-size: 12px;}
 }
 
 @media (max-width:800px) {
+	/*Popup*/
 	.modal-body .dyn-data label{font-size: 12px;}
 }
 
 @media (max-width:768px) {
 	.container{width:92%;}
+	
+	/*Popup*/
+	.modal-dialog{width:80%;}
 	.modal-body .dyn-data label{font-size: 12px;}
 }
 
