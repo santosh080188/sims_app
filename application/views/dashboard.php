@@ -13,14 +13,57 @@
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
 
-<script src="<?php echo base_url(); ?>assets/js/angular.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<!script src="<?php echo base_url(); ?>assets/js/angular.min.js"></script>
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 <script src="<?php echo base_url(); ?>assets/js/quote.js"></script>
-<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<!script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 
 <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/style.css" />
 <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/responsive.css" />
+<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/jquery-ui.css">
+  <script src="<?php echo base_url(); ?>assets/js/jquery-ui.js"></script>
+  <style>
+  .ui-autocomplete {
+    max-height: 100px;
+    overflow-y: auto;
+    /* prevent horizontal scrollbar */
+    overflow-x: hidden;
+  }
+  /* IE 6 doesn't support max-height
+   * we use height instead, but this forces the menu to always be this tall
+   */
+  * html .ui-autocomplete {
+    height: 100px;
+  }
+  .ui-autocomplete{
+	background:#fff;
+    display: none;
+    float: left;
+    height: 200px;
+    left: 399px;
+    position: absolute;
+    top: 209.65px;
+    width: 273px;
+    z-index: 99999;
+	font-size:12px;
+	color:#333;
+	  
+  }
+  </style>
+  <script>
+  $(function() {      
+    var availableProduct = <?php echo $sku?>;
+    $( document ).ready(function() {
+    $( "#product" ).autocomplete({
+      source: availableProduct
+    });
+  });
+  });
+  </script>
+  
+  
+  
 </head>
 
 <body>
@@ -101,7 +144,7 @@
    <div class="modal-dialog">
       <div class="modal-content" id="quotation">
          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
             <h4 class="modal-title" id="myModalLabel">
                Get Quotation
             </h4>
@@ -111,7 +154,7 @@
             <div class="form-left">
                 <p id="error_quote"></p>
 				Choose Product:
-				<ul>
+				<ul>                                    
 					<li><input type="text" placeholder="Product" id="product"></li>
 					<li style="text-align:center;">OR</li>
 					<li>

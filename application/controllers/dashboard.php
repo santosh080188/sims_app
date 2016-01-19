@@ -17,6 +17,7 @@ class Dashboard extends CI_Controller {
         $data["user_product_list"] = $this->fetch_data($config["per_page"], $page);
         $data["links"] = $this->pagination->create_links();
         $data["manufacturer"] = $this->get_manufacturer();
+        $data['sku'] = $this->get_sku();
         $this->load->view('dashboard', $data);
     }
 
@@ -93,7 +94,7 @@ class Dashboard extends CI_Controller {
     }
     
     public function get_sku() {
-        $this->db->select("id,sku");
+        $this->db->select("sku");        
         $query = $this->db->get("product");
         
         if ($query->num_rows() > 0) {
@@ -101,9 +102,9 @@ class Dashboard extends CI_Controller {
             foreach ($query->result() as $row) {
                 $sku[] = $row->sku;
             }
-            echo json_encode($sku);
+            return json_encode($sku);
         } else {
-            echo false;
+            return false;
         }
     }
     public function get_quote() {
