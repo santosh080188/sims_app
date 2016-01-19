@@ -32,11 +32,12 @@
 }
 
 @media (max-width:800px) {
-
+	.modal-body .dyn-data label{font-size: 12px;}
 }
 
 @media (max-width:768px) {
 	.container{width:92%;}
+	.modal-body .dyn-data label{font-size: 12px;}
 }
 
 /*Only for iPhone6+*/
@@ -46,7 +47,11 @@
 
 /*Only for iPhone6*/
 @media (max-width: 667px) {
-
+	.header .logo{width:160px}
+	
+	/*Popup*/
+	.modal-dialog{width:97%;}
+	.modal-body .dyn-data label{font-size: 12px;}
 }
 
 @media (max-width: 640px) {
@@ -78,6 +83,7 @@
 	.nav-top ul li a{font-size:14px;}
 	
 	/*Popup*/
+	.modal-dialog{width:94%;}
 	.form-left, .form-right{width:100%; margin:0;}
 }
 
@@ -120,6 +126,7 @@
 	.container{width:80%;}
 	
 	/*Popup*/
+	.modal-dialog{width:93%;}
 	.form-left, .form-right{width:100%; margin:0;}
 }
 
