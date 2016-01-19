@@ -13,6 +13,10 @@ $(document).ready(function () {
             $("#error_product").append("<p>choose product (or) below four catogories</p>");
             error = 1;
         }
+        if (product != '' && manufacturer == '0') {
+            $("#error_product").append("<p>choose correct product (or) below four catogories</p>");
+            error = 1;
+        }
         if (product == '' && manufacturer != '0') {
             if (model == '0') {
                 error = 1;
@@ -149,11 +153,32 @@ $(document).ready(function () {
                     $("#error_product").html("");
                     $('#manufacturer').html("<option value='0'>Manufacturer</option>");
                     $('#manufacturer').removeAttr('disabled');
-                    $("#error_product").append("<p>Please select the correct product</p>");
+                    $("#error_product").append("<p>Please select the correct product / choose below catogeries </p>");
                 }
 
             }
         });        
     });
+     $("#get_Reset").on('click', function () { 
+         $("#error_product").html('');
+         $('#item1 span').html('');
+         $('#item2 span').html('');
+         $('#item3 span').html('');
+                 $.ajax({
+            method: "POST",
+            url: "dashboard/get_all_data/",
+            data: {product: ""}
+        }).done(function (response) {
+            
+            if (response) {
+                var obj = $.parseJSON(response);
+                if(obj.status == "manufacturer") {
+                    $('#manufacturer').html(obj.manufacturer);
+                    $('#manufacturer').removeAttr('disabled');
+                    $('#packageSIP, #maxSIP, #model').attr('disabled','disable'); 
+                }
+            }
+        })
+     });
 
 });
