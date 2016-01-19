@@ -187,5 +187,30 @@ class Dashboard extends CI_Controller {
         }
         return $option;        
     }
-
+    public function get_all_data() {
+        $product = $this->input->post("product");
+        if($product != "") {
+            $query = $this->db->get_where("product",array("sku"=>$product));
+            if($query->num_rows() > 0) {
+                $data = array();
+                $data["status"] = "all";
+                foreach($query->result() as $row) {
+                    $data["manufacturer"] = "<option>".$row->manufacturer."</option>";
+                    $data["model"] = "<option>".$row->model_number."</option>";
+                    $data["max"] = "<option>".$row->concurrent_SIP_sessions."</option>";
+                    $data["package"] = "<option>".$row->package_concurrent_SIP."</option>";                    
+                }
+                echo json_encode($data);
+            } else {
+                $data["status"] = "nodata";
+                echo json_encode($data);
+            }
+            
+        } else {
+            $data["status"] = "manufacturer";
+            $data["manufacturer"] = $this->get_manufacturer();
+            echo json_encode($data);
+        }
+        
+    }
 }

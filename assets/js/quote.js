@@ -123,6 +123,37 @@ $(document).ready(function () {
                 $('#packageSIP').html(response);
             }
         });
-    })
+    });
+    
+    $("#product").on('change', function () {
+        console.log($(this).val());
+        $.ajax({
+            method: "POST",
+            url: "dashboard/get_all_data/",
+            data: {product: $(this).val()}
+        }).done(function (response) {
+            
+            if (response) {
+                var obj = $.parseJSON(response);
+                if(obj.status == "manufacturer") {
+                    $('#manufacturer').html(obj.manufacturer);
+                    $('#manufacturer').removeAttr('disabled');
+                } else if(obj.status == "all")  {
+                    $('#packageSIP').html(obj.package);
+                    $('#maxSIP').html(obj.max);
+                    $('#model').html(obj.model);
+                    $('#manufacturer').html(obj.manufacturer);
+
+                    $('#packageSIP, #maxSIP, #model, #manufacturer').attr('disabled','disable');                    
+                } else if(obj.status == "nodata")  {
+                    $("#error_product").html("");
+                    $('#manufacturer').html("<option value='0'>Manufacturer</option>");
+                    $('#manufacturer').removeAttr('disabled');
+                    $("#error_product").append("<p>Please select the correct product</p>");
+                }
+
+            }
+        });        
+    });
 
 });
