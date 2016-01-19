@@ -31,7 +31,7 @@ ul, li{list-style:none;}
 .defl-txt{width:100%; height:auto; margin:0 0 5px 0; padding:0; float:left; font-size:12px;}
 
 /*Form*/
-input[type="text"], input[type="password"], input[type="email"], input[type="phone"], select, textarea{-webkit-border-radius:2px; -moz-border-radius:2px; border-radius:2px; border:solid 0px #fff; background-color:#fff; color:#a3a3a3; padding:10px; margin:0 0 5px 0; width:100%; height:auto; font-weight:normal;}
+input[type="text"], input[type="password"], input[type="email"], input[type="phone"], select, textarea{-webkit-border-radius:2px; -moz-border-radius:2px; border-radius:2px; border:solid 0px #fff; background-color:#fff; color:#000000; padding:10px; margin:0 0 5px 0; width:100%; height:auto; font-weight:normal;}
 
 input[type="button"], input[type="submit"], button[type="submit"], button[type="reset"], .btn-default, .btn-primary{-webkit-border-radius:2px; -moz-border-radius:2px; border-radius:2px; border:solid 0px #fff; background-color:#162b53; color:#fff; padding:10px 20px; margin:0 0 0 7px; width:auto; float:right; background-image:none; text-shadow:0 0px 0 #fff;}
 input[type="button"]:hover, input[type="submit"]:hover, button[type="submit"]:hover, button[type="reset"]:hover, .btn-default:hover, .btn-primary:hover{background-color:#265a88; color:#fff;}
@@ -88,4 +88,6 @@ button.close{color:#fff; opacity:1; text-shadow:0 0px 0 #fff;}
 .modal-body select:disabled {color:#ccc; opacity:0.8; cursor:no-drop;}
 .modal-body .dyn-data label{width:100%; margin:0 0 5px 0; float:left; font-weight:normal; font-size:12px;}
 .modal-body .dyn-data label span{width:69px; margin:0 0 0 5px; float:right; text-align:left;}
+#error_product{color:red; font-size:12px; margin:0 0 8px 0; padding:0;}
+#error_product p{color:red; margin:0 0 3px 0; padding:4px 8px; background:#cae7f5;} 
 
