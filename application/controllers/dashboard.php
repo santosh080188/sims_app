@@ -47,8 +47,10 @@ class Dashboard extends CI_Controller {
         $this->db->group_by("manufacturer");
         $this->db->select("manufacturer as val,id");
         $query = $this->db->get("product");
+        $option = "<option value='0'>Manufacturer</option>";
          if ($query->num_rows() > 0) {
-             return $this->create_drop_down($query->result());
+             $option .= $this->create_drop_down($query->result());
+             return $option;
         }
         return false;
     }
@@ -58,9 +60,10 @@ class Dashboard extends CI_Controller {
             $this->db->group_by("model_number");
             $this->db->select("model_number as val,id");
             $query = $this->db->get_where("product",array("manufacturer"=>$manufacturer));
-            //echo $this->db->last_query();
+            $option = "<option value='0'>Model</option>";
              if ($query->num_rows() > 0) {
-                 echo $this->create_drop_down($query->result());
+                $option .= $this->create_drop_down($query->result());
+                echo $option;
             }            
         }
         return false;
@@ -71,9 +74,10 @@ class Dashboard extends CI_Controller {
             $this->db->group_by("concurrent_SIP_sessions");
             $this->db->select("concurrent_SIP_sessions as val,id");
             $query = $this->db->get_where("product",array("model_number"=>$model));
-            //echo $this->db->last_query();
+            $option = "<option value='0'>Max Concurrent SIP Session</option>";
              if ($query->num_rows() > 0) {
-                 echo $this->create_drop_down($query->result());
+                $option .= $this->create_drop_down($query->result());
+                echo $option;
             }            
         }
         return false;
@@ -85,9 +89,10 @@ class Dashboard extends CI_Controller {
             $this->db->group_by("package_concurrent_SIP");
             $this->db->select("package_concurrent_SIP as val,id");
             $query = $this->db->get_where("product",array("concurrent_SIP_sessions"=>$model));
-            //$this->db->last_query();
+            $option = "<option value='0'>Package Concurrent SIP Channels</option>";
              if ($query->num_rows() > 0) {
-                 echo $this->create_drop_down($query->result());
+                $option .= $this->create_drop_down($query->result());
+                echo $option;
             }            
         }
         return false;
@@ -176,7 +181,7 @@ class Dashboard extends CI_Controller {
     }    
     
     public function create_drop_down($object,$selected = 0) {
-        $option = "<option value='0'>--- Select ---</option>";
+        $option = "";
         foreach($object as $row) {
             $option .= "<option value='".$row->id."'>".$row->val."</option>";
         }
