@@ -66,9 +66,9 @@
                 <figure class="logo"><img src="<?php echo base_url(); ?>assets/images/logo.png" width="253" height="65" alt=""></figure>
                 <nav class="nav-top">
                     <ul>
-                        <li class="no-bdr"><a href="#myModalContent.html" data-toggle="modal" data-target="#myModal">Get Quotation <i class="Get-Quotation"></i></a><li>
-                        <li><a href="<?php echo base_url(); ?>login/logout">Logout <i class="Logout"></i></a><li>
-                        <li><a href="#Username"><?php echo $this->session->userdata('firstname') ?> <i class="Username"></i></a><li>
+                        <li><a href="#Username"><?php echo $this->session->userdata('firstname'); ?> <i class="Username"></i></a><li>
+        <li><a href="<?php echo base_url(); ?>index.php/login/logout">Logout <i class="Logout"></i></a><li>
+        <li class="no-bdr"><a href="#myModalContent.html" data-toggle="modal" data-target="#myModal">Get Quotation <i class="Get-Quotation"></i></a><li>
                     </ul>
                 </nav>
             </header>

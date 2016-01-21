@@ -4,6 +4,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Dashboard extends CI_Controller {
 
     public function index() {
+        if ($this->session->userdata('email') == "") {
+            redirect('login/index/', 'Location');
+        }
+        else{
         $this->load->library('pagination');
         $config = array();
         $config["base_url"] = base_url() . "dashboard/index";
@@ -19,6 +23,7 @@ class Dashboard extends CI_Controller {
         $data["manufacturer"] = $this->get_manufacturer();
         $data['sku'] = $this->get_sku();
         $this->load->view('dashboard', $data);
+        }
     }
 
     public function total_rows_count() {

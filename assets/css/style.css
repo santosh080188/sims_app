@@ -52,9 +52,9 @@ input[type="button"]:hover, input[type="submit"]:hover, button[type="submit"]:ho
 /*Header*/
 .header .logo{width:220px; height:auto; float:left; text-align:center;}
 .header .logo img{width:100%; height:auto; float:none;}
-.nav-top{width:445px; height:auto; margin:17px 0 0 0; padding:0 0 0 0; float:right; color:#687ea1;}
+.nav-top{width:auto; min-width:445px; max-width:560px; height:auto; margin:17px 0 0 0; padding:0 0 0 0; float:right; color:#687ea1;}
 .nav-top ul{width:100%; height:auto; margin:0; padding:0 0 0 0; float:right;}
-.nav-top ul li{width:auto; height:auto; margin:0 0 0 15px; padding:0 0 0 15px; float:left; border-left:dotted 1px #687ea1;}
+.nav-top ul li{width:auto; height:auto; margin:0 0 0 15px; padding:0 0 0 15px; float:right; border-left:dotted 1px #687ea1;}
 .nav-top ul li a:hover{color:#162b53;}
 .nav-top ul li a i{width:22px; height:22px; margin:0 0 0 5px; padding:0; float:right; background-image:url(../images/icons-nav-top.png);}
 .Username{background-position:0 0px;}

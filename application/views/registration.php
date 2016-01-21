@@ -37,8 +37,8 @@
                             <p id="reg-passworderror" class="help-block"></p>
                             <input id="reg-email" type="email" name="email" class="form-control"  placeholder="Email" required>
                         </li>
-                        <li><input id="reg-firstname" type="text" name="name" class="form-control" placeholder="First Name" required></li>
-                        <li><input id="reg-lastname" type="text" name="nameLast" class="form-control"  placeholder="Last Name" required></li>
+                        <li><input id="reg-firstname" type="text" name="name" class="form-control" placeholder="First Name"  maxlength="20"  required></li>
+                        <li><input id="reg-lastname" type="text" name="nameLast" class="form-control"  placeholder="Last Name"  maxlength="20"  required></li>
                         <li><input id="reg-password" type="Password" name="password" class="form-control" placeholder="Password" required></li>
                         <li><input id="reg-confirm-password" type="Password" name="confirmPassword" class="form-control"  placeholder="Confirm Password" required></li>
                         <li>
