@@ -134,11 +134,12 @@ $(document).ready(function () {
             method: "POST",
             url: "dashboard/get_all_data/",
             data: {product: $(this).val()}
-        }).done(function (response) {
-            
+        }).done(function (response) {       
             if (response) {
+                $("#error_product").html("");
                 var obj = $.parseJSON(response);
                 if(obj.status == "manufacturer") {
+                    $("#error_product").html("");
                     $('#manufacturer').html(obj.manufacturer);
                     $('#manufacturer').removeAttr('disabled');
                 } else if(obj.status == "all")  {
@@ -146,15 +147,12 @@ $(document).ready(function () {
                     $('#maxSIP').html(obj.max);
                     $('#model').html(obj.model);
                     $('#manufacturer').html(obj.manufacturer);
-
-                    $('#packageSIP, #maxSIP, #model, #manufacturer').attr('disabled','disable');                    
+                    $('#packageSIP, #maxSIP, #model, #manufacturer').attr('disabled','disable'); 
                 } else if(obj.status == "nodata")  {
-                    $("#error_product").html("");
                     $('#manufacturer').html("<option value='0'>Manufacturer</option>");
                     $('#manufacturer').removeAttr('disabled');
                     $("#error_product").append("<p>Please select the correct product</p>");
                 }
-
             }
         });        
     });
@@ -167,17 +165,19 @@ $(document).ready(function () {
             method: "POST",
             url: "dashboard/get_all_data/",
             data: {product: ""}
-        }).done(function (response) {
-            
+        }).done(function (response) {    
             if (response) {
                 var obj = $.parseJSON(response);
                 if(obj.status == "manufacturer") {
+                    $("#error_product").html("");
                     $('#manufacturer').html(obj.manufacturer);
+                    $('#packageSIP').html("<option value='0'>Package Concurrent SIP Channels</option>");
+                    $('#maxSIP').html("<option value='0'>Max Concurrent SIP Sessions</option>");
+                    $('#model').html("<option value='0'>Model</option>");
                     $('#manufacturer').removeAttr('disabled');
-                    $('#packageSIP, #maxSIP, #model').attr('disabled','disable'); 
+                    $('#packageSIP, #maxSIP, #model').attr('disabled','disable');
                 }
             }
         })
-     });
-
+     });  
 });

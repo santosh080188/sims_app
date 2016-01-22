@@ -149,7 +149,7 @@
             <div class="form-left">
 				Choose Product:
 				<ul>                                    
-					<li><input type="text" placeholder="Product" id="product"></li>
+                                    <li><input type="text" placeholder="Product" id="product"></li>
 					<li style="text-align:center;">OR</li>
 					<li>
                                         <select placeholder="Manufacturer" id="manufacturer"><?php echo $manufacturer; ?>
